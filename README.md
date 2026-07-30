@@ -1,4 +1,4 @@
-Testing automatic Vercel deployment.
+
 # Miracle View Health LLC — Official Patient Portal & Web Platform
 
 A modern, high-performance, HIPAA-compliant web platform for **Miracle View Health LLC**, an integrative psychiatric, interventional behavioral health, and wellness clinic located in Tempe, Arizona.
