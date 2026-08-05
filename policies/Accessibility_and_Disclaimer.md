@@ -30,7 +30,7 @@ Accessing this website, reviewing its content, submitting an inquiry, or request
 
 # 6\. Third-Party Websites
 
-Our website may contain links to third-party websites or external resources for your convenience. Miracle View Health does not control or assume responsibility for the content, availability, security, or privacy practices of third-party websites. Users are encouraged to review the privacy policies and terms applicable to those websites before providing personal information.
+Our website does not contain links to third-party websites or external resources.
 
 # 7\. Changes to this Statement
 
@@ -49,4 +49,3 @@ Phone: (520) 274-1251
 Fax number: (520) 322-9814
 
 Email: info@miracleviewhealthllc.com
-

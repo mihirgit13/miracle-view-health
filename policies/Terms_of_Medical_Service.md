@@ -342,13 +342,7 @@ Miracle View Health shall not be liable for temporary interruptions in website a
 
 # 19\. Third-Party Websites
 
-Our website may contain links to external websites operated by third parties.
-
-Such links are provided solely for convenience and informational purposes.
-
-Miracle View Health does not endorse or assume responsibility for the content, security, privacy practices, or availability of third-party websites.
-
-Users access third-party websites at their own discretion and risk.
+Our website does not contain links to external websites operated by third parties.
 
 # 20\. Limitation of Liability
 

@@ -322,7 +322,7 @@ Requests may be subject to identity verification and applicable legal limitation
 
 # 13\. Third-Party Websites
 
-Our website may contain links to external websites or services. These websites operate independently from Miracle View Health. We are not responsible for the privacy, security, or content of third-party websites. Users are encouraged to review their respective privacy policies before providing personal information.
+Our website does not contain links to external websites or services.
 
 # 14\. Children and Individuals Requiring Assistance
 

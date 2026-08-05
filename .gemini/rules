@@ -1,0 +1,11 @@
+# Miracle View Health - Workspace Rules & Workflow
+
+## Git Branching Strategy
+- **Primary Development Branch**: `develop`
+- **Production Branch**: `main` (connected to Vercel deployment)
+
+### Instructions for Agent:
+1. Always perform active development, feature building, bug fixing, and edits on the `develop` branch.
+2. Ensure you are on `develop` branch before starting work.
+3. Push changes to `origin/develop` for testing/preview.
+4. Merge/push to `main` ONLY when a release is ready for production deployment on Vercel.

@@ -1,0 +1,10 @@
+# Project Rules & Git Workflow
+
+## Git Branching Rules
+- **Active Development Branch**: `develop`
+- **Production Branch**: `main` (Vercel automatic deployment)
+
+## Workflow Guidelines:
+- All active coding, bug fixing, and testing must take place on the `develop` branch.
+- Changes are pushed to `origin/develop`.
+- Only merge/push to `main` when features are ready to be deployed to live production on Vercel.
