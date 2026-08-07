@@ -322,7 +322,14 @@ export default function InsuranceSection() {
                         className="mt-1 h-4 w-4 rounded border-gray-300 bg-gray-50 text-[#1e463c] focus:ring-[#1e463c] cursor-pointer"
                       />
                       <label htmlFor="insurance-consent-sms" className="text-xs text-gray-500 leading-normal cursor-pointer selection:bg-transparent text-left">
-                        I agree to receive appointment reminders and verification status updates via SMS. Standard message and data rates may apply. <span className="text-gray-400 font-mono text-[10px] uppercase font-bold">(Optional)</span>
+                        I agree to receive appointment reminders, customer care, and verification status updates via SMS from Miracle View Health LLC. Message and data rates may apply. Message frequency varies. Text HELP for help. Reply STOP to opt out. View our{' '}
+                        <Link to="/privacy-policy" className="underline text-[#c39b3d] hover:text-[#b08b33] transition-colors">
+                          Privacy Policy
+                        </Link>{' '}
+                        and{' '}
+                        <Link to="/terms-of-service" className="underline text-[#c39b3d] hover:text-[#b08b33] transition-colors">
+                          Terms of Service
+                        </Link>. <span className="text-gray-400 font-mono text-[10px] uppercase font-bold">(Optional)</span>
                       </label>
                     </div>
                   </div>

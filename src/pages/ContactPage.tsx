@@ -217,7 +217,14 @@ export default function ContactPage() {
                         className="mt-1 h-4 w-4 rounded border-gray-300 bg-gray-50 text-[#1e463c] focus:ring-[#1e463c] cursor-pointer"
                       />
                       <label htmlFor="contact-consent-sms" className="text-xs text-gray-500 leading-normal cursor-pointer selection:bg-transparent text-left">
-                        I consent to receive text messages, appointment reminders, scheduling updates, and clinical notifications from Miracle View Health. I understand that consent is not a condition of purchase, message and data rates may apply, and message frequency varies. I can reply STOP to unsubscribe at any time. Mobile information will not be shared with third parties for marketing purposes. <span className="text-gray-400 font-mono text-[10px] uppercase font-bold">(Optional)</span>
+                        I consent to receive text messages, appointment reminders, scheduling updates, customer care, and clinical notifications from Miracle View Health LLC. Message and data rates may apply. Message frequency varies. Text HELP for help or assistance. Reply STOP to unsubscribe or opt out at any time. Mobile information will not be shared with third parties for marketing purposes. View our{' '}
+                        <Link to="/privacy-policy" className="underline text-[#c39b3d] hover:text-[#b08b33] transition-colors">
+                          Privacy Policy
+                        </Link>{' '}
+                        and{' '}
+                        <Link to="/terms-of-service" className="underline text-[#c39b3d] hover:text-[#b08b33] transition-colors">
+                          Terms of Service
+                        </Link>. <span className="text-gray-400 font-mono text-[10px] uppercase font-bold">(Optional)</span>
                       </label>
                     </div>
                   </div>

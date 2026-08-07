@@ -612,7 +612,14 @@ export default function BookNowPage() {
                           className="mt-1 h-3.5 w-3.5 rounded border-gray-300 bg-gray-50 text-[#1e463c] focus:ring-[#1e463c] cursor-pointer"
                         />
                         <label htmlFor="booking-consent-sms" className="text-[10px] text-gray-400 leading-normal cursor-pointer text-left">
-                          I consent to receive text messages, scheduling alerts, and coordination notifications from Miracle View Health. Message and data rates may apply. Message frequency varies. Reply STOP to cancel at any time. Mobile information will not be shared with third parties for marketing purposes. (Optional)
+                          I consent to receive text messages, scheduling alerts, and care coordination notifications from Miracle View Health LLC. Message and data rates may apply. Message frequency varies. Text HELP for help. Reply STOP to cancel or opt out at any time. Mobile information will not be shared with third parties for marketing purposes. View our{' '}
+                          <Link to="/privacy-policy" className="underline text-[#c39b3d] hover:text-[#b08b33] transition-colors">
+                            Privacy Policy
+                          </Link>{' '}
+                          and{' '}
+                          <Link to="/terms-of-service" className="underline text-[#c39b3d] hover:text-[#b08b33] transition-colors">
+                            Terms of Service
+                          </Link>. (Optional)
                         </label>
                       </div>
                     </div>
