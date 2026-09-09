@@ -97,16 +97,46 @@ function doPost(e) {
              "Transmitted under Google Workspace BAA compliance standards.";
     }
 
-    // Process file attachment if present
+    // Process file attachment if present (enforce strict type allowlist and max 15MB limit)
     var attachments = [];
     if (data.fileData && data.fileName && data.fileData.length > 20) {
       try {
-        var base64Parts = data.fileData.split(",");
-        var base64Content = base64Parts.length > 1 ? base64Parts[1] : base64Parts[0];
-        var decodedBytes = Utilities.base64Decode(base64Content);
-        var mimeType = data.fileType || "application/pdf";
-        var fileBlob = Utilities.newBlob(decodedBytes, mimeType, data.fileName);
-        attachments.push(fileBlob);
+        var rawFileName = (data.fileName || "attachment").replace(/[^a-zA-Z0-9._-]/g, "_");
+        var lowerName = rawFileName.toLowerCase();
+        var allowedExtensions = [".pdf", ".doc", ".docx", ".png", ".jpg", ".jpeg"];
+        var isAllowedExt = allowedExtensions.some(function(ext) { return lowerName.endsWith(ext); });
+
+        if (!isAllowedExt) {
+          console.warn("Blocked unsupported attachment extension: " + rawFileName);
+        } else {
+          var base64Parts = data.fileData.split(",");
+          var base64Content = base64Parts.length > 1 ? base64Parts[1] : base64Parts[0];
+
+          // Rough base64 size check (max ~15MB decoded, ~20MB base64)
+          if (base64Content.length > 20 * 1024 * 1024) {
+            console.warn("Attachment payload exceeds 15MB limit: " + rawFileName);
+          } else {
+            var decodedBytes = Utilities.base64Decode(base64Content);
+            if (decodedBytes.length > 15 * 1024 * 1024) {
+              console.warn("Decoded attachment exceeds 15MB limit: " + rawFileName);
+            } else {
+              var mimeType = data.fileType || "application/pdf";
+              var allowedMimeTypes = [
+                "application/pdf",
+                "application/msword",
+                "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+                "image/png",
+                "image/jpeg",
+                "image/jpg"
+              ];
+              if (allowedMimeTypes.indexOf(mimeType) === -1) {
+                mimeType = "application/octet-stream";
+              }
+              var fileBlob = Utilities.newBlob(decodedBytes, mimeType, rawFileName);
+              attachments.push(fileBlob);
+            }
+          }
+        }
       } catch (attachErr) {
         console.error("Attachment error: " + attachErr.toString());
       }
@@ -131,7 +161,8 @@ function doPost(e) {
       .setMimeType(ContentService.MimeType.JSON);
       
   } catch (error) {
-    return ContentService.createTextOutput(JSON.stringify({ status: "error", message: error.toString() }))
+    console.error("Submission processing error: " + error.toString());
+    return ContentService.createTextOutput(JSON.stringify({ status: "error", message: "An error occurred while processing your submission." }))
       .setMimeType(ContentService.MimeType.JSON);
   }
 }

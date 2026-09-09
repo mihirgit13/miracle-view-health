@@ -50,16 +50,27 @@ export default function CareersPage() {
     const file = e.target.files?.[0];
     setFileError('');
     if (file) {
-      if (file.type === 'application/pdf' || file.name.toLowerCase().endsWith('.pdf')) {
-        setFileName(file.name);
-        setUploadedFile(file);
-      } else {
+      const MAX_FILE_SIZE_BYTES = 10 * 1024 * 1024; // 10MB limit
+      const isPdf = file.type === 'application/pdf' || file.name.toLowerCase().endsWith('.pdf');
+
+      if (!isPdf) {
         setFileName('');
         setUploadedFile(null);
         setFileError('Please select a valid PDF document.');
-        // Reset the input value so the same invalid file triggers the event again
         e.target.value = '';
+        return;
       }
+
+      if (file.size > MAX_FILE_SIZE_BYTES) {
+        setFileName('');
+        setUploadedFile(null);
+        setFileError('File size exceeds the 10MB limit. Please upload a smaller PDF resume.');
+        e.target.value = '';
+        return;
+      }
+
+      setFileName(file.name);
+      setUploadedFile(file);
     }
   };
 
